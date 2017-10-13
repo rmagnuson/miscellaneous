@@ -7,37 +7,37 @@ carousel = [
     ["monte-do-casal-estoi-portug.gif", "http://www.elegantsmallhotel.com/hotels/eww4632.html", "Monte do Casal - Estoi, Portugal", " <b>Monte do Casal</b><br> Estoi, Portugal"],
     ["is-morus-hotel-sardinia-ita.gif", "http://www.elegantsmallhotel.com/hotels/eww4632.html", "Is Morus Hotel - Sardinia, Italy", " <b>Is Morus Hotel</b><br> Sardinia, Italy"],
     ["8034eww.jpg", "http://www.elegantsmallhotel.com/hotels/eww8034.html", "El Tamarindo - Cihuatlan, Mexico", " <b>El Tamarindo</b><br> Cihuatlan, Mexico"]
-]
+];
 
-dir = 0 // 0 = left 1 = right
-speed = 3
-imageSize = 100 // % set to zero to use fixedWidth and fixedHeight values
-fixedWidth = 200 // set a fixed width
-fixedHeight = 200 // set a fixed height
-spacerWidth = 2 // space between images
+dir = 0; // 0 = left 1 = right
+speed = 3;
+imageSize = 100; // % set to zero to use fixedWidth and fixedHeight values
+fixedWidth = 200; // set a fixed width
+fixedHeight = 200; // set a fixed height
+spacerWidth = 2; // space between images
 
-biggest = 0
-ieBorder = 0
-totalWidth = 0
-hs5Timer = null
+biggest = 0;
+ieBorder = 0;
+totalWidth = 0;
+hs5Timer = null;
 
-lastN = 0
-count = 0
+lastN = 0;
+count = 0;
 
-preload = new Array()
+preload = new Array();
 for (var i = 0; i < carousel.length; i++) {
-    preload[i] = []
+    preload[i] = [];
     for (var j = 0; j < 2; j++) {
-        preload[i][j] = new Image()
-        preload[i][j].src = carousel[i][j]
+        preload[i][j] = new Image();
+        preload[i][j].src = carousel[i][j];
     }
 }
 
 function initHS5() {
-    scroll1 = document.getElementById("scroller1")
+    scroll1 = document.getElementById("scroller1");
     for (var k = 0; k < carousel.length; k++) {
 
-        scroll1.innerHTML += '<img id="pic' + k + '" src="' + preload[k][0].src + '" alt="' + carousel[k][2] + '" title="' + carousel[k][2] + '" onclick="showTarget(' + k + ')" onmouseover="testOver(this,this.offsetParent.id,' + k + ')" onmouseout="testOut(event)">'
+        scroll1.innerHTML += '<img id="pic' + k + '" src="' + preload[k][0].src + '" alt="' + carousel[k][2] + '" title="' + carousel[k][2] + '" onclick="showTarget(' + k + ')" onmouseover="testOver(this,this.offsetParent.id,' + k + ')" onmouseout="testOut(event)">';
 
         if (imageSize != 0) { // use percentage size
             newWidth = preload[k][0].width / 100 * imageSize
