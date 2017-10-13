@@ -1,9 +1,7 @@
 /*
-Created By: Chris Campbell
-Website: http://particletree.com
-Date: 2/1/2006
 
-Inspired by the lightbox implementation found at http://www.huddletogether.com/projects/lightbox/
+Lightbox
+
 */
 
 /*-------------------------------GLOBAL VARIABLES------------------------------------*/
